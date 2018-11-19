@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block title %}Salão Internacional - Votação{% endblock %}
+
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/styleVoting.css' %}">
+{% endblock %}
+
+{% block script %}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('form input').on('change', function(){
+      $('.seeValue').val($('[type=radio]:checked').val());
+    });
+  });
+
+    $('#enviar').on('click', function(){
+      alert("Voto registrado com sucesso")
+    });
+</script>
+
+{% endblock %}
+
+{% block content %}
+<header class="container">
+  <div class="row">
+    <div class="col-lg-4 col-12">
+      <img src="https://www.joaopessoacriativa.com.br/wp-content/themes/jpcriativa/assets/images/logo.png">
+    </div>
+    <div class="col-lg-8 col-12">
+      <h1>Vote agora!</h1>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="blankSPace"></div>
+
+  <form class="container " action="" method="post"> {% csrf_token %}
+
+    <div class="row">
+
+
+    <div class="category container">
+      <h1>Estudante / Produto - EP</h1>
+    </div>
+    {% for obra in obras %}
+      {% if obra.category_obra.nome_category == 'EP' %}
+          <div class="col-lg-4 col-12">
+            <label>
+              <input type="radio" name="option1" value="{{obra.nome_obra}}"  required/>
+              <img src="{{obra.foto_obra.url}}" alt="{{obra.nome_obra}}">
+              <span>{{obra.nome_obra}}</span>
+            </label>
+            <input type="hidden" name="category1" value="EP">
+          </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="category container">
+      <h1>Estudant / Grafico - EG</h1>
+    </div>
+
+    {% for obra in obras %}
+      {% if obra.category_obra.nome_category == 'EG' %}
+          <div class="col-lg-4 col-12">
+            <label>
+              <input type="radio" name="option2" value="{{obra.nome_obra}}"  required/>
+              <img src="{{obra.foto_obra.url}}" alt="{{obra.nome_obra}}">
+              <span>{{obra.nome_obra}}</span>
+            </label>
+            <input type="hidden" name="category2" value="EP">
+          </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="category container">
+      <h1>Estudante / Moda - EM</h1>
+    </div>
+
+    {% for obra in obras %}
+      {% if obra.category_obra.nome_category == 'EM' %}
+          <div class="col-lg-4 col-12">
+            <label>
+              <input type="radio" name="option3" value="{{obra.nome_obra}}"  required/>
+              <img src="{{obra.foto_obra.url}}" alt="{{obra.nome_obra}}">
+              <span>{{obra.nome_obra}}</span>
+            </label>
+            <input type="hidden" name="category3" value="EP">
+          </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="category container">
+      <h1>Estudante / Interiores - EI</h1>
+    </div>
+
+    {% for obra in obras %}
+      {% if obra.category_obra.nome_category == 'EI' %}
+          <div class="col-lg-4 col-12">
+            <label>
+              <input type="radio" name="option4" value="{{obra.nome_obra}}"  required/>
+              <img src="{{obra.foto_obra.url}}" alt="{{obra.nome_obra}}">
+              <span>{{obra.nome_obra}}</span>
+            </label>
+            <input type="hidden" name="category4" value="EP">
+          </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="category container">
+      <h1>Profissional / Produto - PP</h1>
+    </div>
+
+    {% for obra in obras %}
+      {% if obra.category_obra.nome_category == 'PP' %}
+          <div class="col-lg-4 col-12">
+            <label>
+              <input type="radio" name="option5" value="{{obra.nome_obra}}"  required/>
+              <img src="{{obra.foto_obra.url}}" alt="{{obra.nome_obra}}">
+              <span>{{obra.nome_obra}}</span>
+            </label>
+            <input type="hidden" name="category5" value="EP">
+          </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="category container">
+      <h1>Profissional / Gráfico - PG</h1>
+    </div>
+
+    {% for obra in obras %}
+      {% if obra.category_obra.nome_category == 'PG' %}
+          <div class="col-lg-4 col-12">
+            <label>
+              <input type="radio" name="option6" value="{{obra.nome_obra}}"  required/>
+              <img src="{{obra.foto_obra.url}}" alt="{{obra.nome_obra}}">
+              <span>{{obra.nome_obra}}</span>
+            </label>
+            <input type="hidden" name="category6" value="EP">
+          </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="category container">
+      <h1>Profissional / Moda - PM</h1>
+    </div>
+
+    {% for obra in obras %}
+      {% if obra.category_obra.nome_category == 'PM' %}
+          <div class="col-lg-4 col-12">
+            <label>
+              <input type="radio" name="option7" value="{{obra.nome_obra}}"  required/>
+              <img src="{{obra.foto_obra.url}}" alt="{{obra.nome_obra}}">
+              <span>{{obra.nome_obra}}</span>
+            </label>
+            <input type="hidden" name="category7" value="EP">
+          </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="category container">
+      <h1>Profissional / Interiores - PI</h1>
+    </div>
+
+      {% for obra in obras %}
+        {% if obra.category_obra.nome_category == 'PI' %}
+            <div class="col-lg-4 col-12">
+              <label>
+                <input type="radio" name="option8" value="{{obra.nome_obra}}"  required/>
+                <img src="{{obra.foto_obra.url}}" alt="">
+                <span>{{obra.nome_obra}}</span>
+              </label>
+              <input type="hidden" name="category8" value="EP">
+            </div>
+        {% endif %}
+      {% endfor %}
+
+  </div>
+
+    <div class="formSubmit">
+      <input type="hidden" value="" disabled class="seeValue1">
+      <input type="hidden" value="" disabled class="seeValue2">
+      <input type="hidden" value="" disabled class="seeValue3">
+      <input type="hidden" value="" disabled class="seeValue4">
+      <input type="hidden" value="" disabled class="seeValue5">
+      <input type="hidden" value="" disabled class="seeValue6">
+      <input type="hidden" value="" disabled class="seeValue7">
+      <input type="hidden" value="" disabled class="seeValue8">
+      <input type="submit" name="" value="Votar" id="enviar">
+    </div>
+  </form>
+</main>
+
+
+
+{% endblock %}

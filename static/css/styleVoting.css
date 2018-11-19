@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+
+.blankSpace{
+  height: 40vh;
+}
+
+@media (min-width:900px) {
+  .blankSpace{
+    height: 12vh;
+  }
+}
+
+
+header{
+  width: 100vw;
+  height: 20vh;
+  background-color: #006266;
+}
+
+header img{
+  width: 200px;
+  height: 200px;
+}
+
+@media (max-width:800px){
+  header img{
+    width: 300px;
+    height: 300px;
+  }
+}
+
+header h1{
+  margin-top: 5%;
+  color: white;
+  font-size: 4em;
+  font-family: 'PT Sans', sans-serif;
+
+}
+
+@media (max-width:800px){
+  header h1{
+    color: black;
+  }
+}
+
+form .col-lg-4 label{
+  height: 50vh;
+}
+
+form .col-lg-4 span{
+  text-align: center;
+}
+
+form .col-lg-4 img{
+  object-fit: cover;
+  width: 100%;
+  height: 40vh;
+}
+
+input[type=radio]{
+  display: none;
+}
+
+input[type=radio]:checked+img{
+  box-shadow: 0 0 20px #006266;
+}
+
+.formSubmit{
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+input[type=submit]{
+  z-index: 1;
+  bottom: 15%;
+  right: 10%;
+  position: absolute;
+  width: 20%;
+  height: 70%;
+  background-color: #006266;
+  border: 1px solid transparent;
+  border-radius: 90px;
+  color: white;
+  font-size: 1em;
+}
+
+
+.seeValue{
+  margin-top: 20px;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.5em;
+  width: 60%;
+}
+
+
+.category h1{
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: black;
+  font-size: 3em;
+}
+
+.category{
+  height: 15vh;
+}
+
+@media (max-width:500px){
+  .cateboy h1{
+    font-size: 1em;
+  }
+}
