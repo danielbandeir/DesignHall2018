@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:500');
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+}
+
+.image img{
+    height: 70vh;
+    width: 100vw;
+  }
+
+
+@media (min-width: 1000px){
+    .image img{
+        height: 90vh;
+        width: 60vw;
+    }
+}
+
+.blankSPace{
+  height: 7vh;
+  width: 100%;
+  background-color: transparent;
+}
+
+.clickVote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 300px;
+    height: 80px;
+    background-color: #006266;
+    border: 1px solid transparent;
+    border-radius: 90px;
+}
+
+.clickVote a{
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-decoration: none;
+}

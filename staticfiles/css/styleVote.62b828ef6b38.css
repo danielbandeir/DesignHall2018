@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:700');
+
+main{
+  display: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img{
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+.image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+
+#content{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100vh;
+}
+
+.image22{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-image: url("../images/vote.195c41c8514b.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0% 100%, 300% 50%, 0% 0%);
+  box-shadow: 1px 1px 8px black;
+}
+
+.contentForm{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+@media (max-width:1025px){
+  .image{
+    height: 50vh;
+  }
+}
+
+input[type=email]{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  outline: none;
+}
+
+input[type=submit]{
+  margin-top: 5%;
+  background-color:#F79F1F;
+  border: none;
+  border: 1px solid transparent;
+  border-radius: 90px;
+  width: 100%;
+  height: 5vh
+  outline: none;
+  color: white;
+}
+
+.messages{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background-color: #ff6b6b;
+  width: 300px;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+}
+
+.messages li{
+  color: white;
+  font-family: 'PT Sans', sans-serif;
+}
