@@ -3,7 +3,6 @@ from django.http import HttpResponseRedirect, HttpRequest
 from django.contrib import messages
 from .forms import pessoaForm
 from .models import *
-import PyPDF2
 
 def index(request):
     return render(request, 'index.html')
