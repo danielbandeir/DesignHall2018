@@ -8,7 +8,7 @@ main{
 }
 
 .image{
-  background-image: url("https://www.joaopessoacriativa.com.br/wp-content/themes/jpcriativa/assets/images/logo.png");
+  background-image: url("../images/logo.png");
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
